@@ -17,7 +17,8 @@ var arr = [10,20,30];
   Return the first item in the given array.
 */
 
-//Code Here
+var first = (arr) => arr[0]
+
 
 
 
@@ -32,7 +33,8 @@ var arr = [40,50,60];
   Return the last item in the given array.
 */
 
-//Code Here
+var last = (arr) => arr[arr.length-1]
+
 
 
 
@@ -47,7 +49,11 @@ var family = ['Tyler', 'Jordyn', 'Ryan', 'Chelsey', 'Ireland'];
   Loop through the given array and alert every item in the array.
 */
 
-//Code Here
+var looper = (family) => {
+  for ( var i = 0; i < family.length; i++ ) {
+    alert(family[i], i, family);
+  }
+}
 
 
 
@@ -62,7 +68,12 @@ var letters = ['A', 'B', 'C', 'D', 'E'];
   Loop through the given array backwards alerting every item in the array starting at the end.\
 */
 
-//Code Here
+var reversedLooper = (letters) => {
+  for (var i = letters.length-1; i >= 0; i--) {
+   alert(letters[i], i );
+  }
+}
+
 
 
 
@@ -77,7 +88,14 @@ var nums = [1,2,3,6,22,98,45,23,22,12];
   Return only the even numbers from the array.
 */
 
-//Code Here
+var evenFinder = (nums) => {
+  var result = [];
+  for (var i = 0; i < nums.length; i++) {
+    if (nums[i] % 2 === 0)
+    result.push(nums[i]);
+  }
+  return result;
+}
 
 
 
@@ -94,7 +112,23 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
   Have divider return an Array with the first item in the array being the evens array (all the even values from numbersArray) and the second item in the Array being the odds array (all the odd values from numbersArray).
 */
 
-//Code Here
+  function divider(numbersArray){
+    var evens = [];
+    var odds = [];
+    var newArray = [evens, odds]
+    var count = 0;  
+  for (var i = 0; i < numbersArray.length; i++){
+    if(numbersArray[i] % 2 === 0){
+      evens.push(numbersArray[i]);
+      count++
+
+    } else {
+      odds.push(numbersArray[i]);
+      count++
+    }
+  }
+  return newArray;
+  }
 
 
 
@@ -115,7 +149,13 @@ var getRandomArbitrary = function() {
   If it is, return true, if it's not, return false
 */
 
-//Code Here
+// function finder(arr){
+//   var rand = getRandomArbitrary();
+// 	console.log(rand);
+// 	return arr.indexOf(rand) === -1 ? false: true;
+// }
+
+// finder([0,4,9,10]);
 
 
 
@@ -142,7 +182,20 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   addItem(myGroceryList, 'Jerky') --> ['pizza', 'hotpockets', 'MtnDew', 'corndogs', 'Jerky'];
 */
 
-//Code Here
+function removeItem(myGroceryList, item){
+  // //   return myGroceryList.filter(function(listItem){
+  // //     return listItem !== item;
+  // //   });
+  // // }
+  
+  // // function addItem(myGroceryList,item){
+  // //   newArr =  myGroceryList.push(item);
+  // //   return newArr;
+  // // }
+  
+  // myGroceryList.push('hot dogs');
+  // myGroceryList
+  
 
 
 
@@ -152,7 +205,13 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
   Write a function called maker that creates an array, fills that array with numbers from 1 to 215, then returns the array.
 */
 
-//Code Here
+function maker() {
+  var myArray = [];
+  for (var i = 0; i < 25; i++) {
+    myArray[i] = i + 1;
+  }
+  return myArray;
+}
 
 
 
@@ -168,8 +227,14 @@ var numbers = [5, '9', 16, 19, '25', '34', 48];
   *Verify your answer is correct. --> [15, 19, 26, 29, 35, 44, 58]
 */
   
-//Code Here
-
+function addTen(numbers){
+  //   newNumbers = [];
+  //   for (i=0;i<numbers.length;i++){
+  //     newNumbers.push(Number(numbers[i])+10);
+  //   } 
+  //   return newNumbers; 
+  // }
+  // addTen(numbers)
 
 
 ////////// PROBLEM 11 //////////
@@ -193,8 +258,16 @@ for(var i = 0; i < num2; i++){
   Return the array which is longest.
 */
 
-//Code Here
-
+var num1 = Math.floor(Math.random() * (30 - 0) + 0);
+var num2 = Math.floor(Math.random() * (30 - 0) + 0);
+var arr1 = [];
+var arr2 = [];
+for(var i = 0; i < num1; i++){
+  arr1.push(i);
+}
+for(var i = 0; i < num2; i++){
+  arr2.push(i);
+}
 
 
 /*
@@ -205,8 +278,17 @@ for(var i = 0; i < num2; i++){
   Example: var arr1 = [1,2,3,4]; var arr2 = [2,4,5,6]; newArray // [2,4]
 */
 
-//Code Here
-
+var both = function(arr1,arr2){
+  var newArr = arr1.concat(arr2);
+  
+  var answer = [];
+  for(var x = 0; x < newArr.length; x++){
+    if(arr1.includes(newArr[x]) && arr2.includes(newArr[x])){
+      answer.push(newArr[x])
+    }
+  }return answer.splice(0, answer.length/2);
+}
+both(arr1, arr2);
 
 
 ////////// PROBLEM 12 //////////
@@ -245,8 +327,8 @@ var colt = {
   After that console.log the length of the Array and make sure that it's equal to 4. 
 */
 
-//Code Here
-
+devMountainEmployees.push(tyler, cahlan, ryan, colt);
+console.log(devMountainEmployees.length);
 
 
 /*
@@ -254,7 +336,13 @@ var colt = {
   Loop through your devMountainEmployees until you find cahlan, then remove him from the array.
 */
 
-//Code Here
+devMountainEmployees.forEach(function(element, index, array){
+  if (element.name === "Cahlan") {
+  	array.splice(index,1);
+  }
+})
+
+devMountainEmployees
 
 
 
@@ -265,9 +353,7 @@ var colt = {
   A very clean way to pass around large LISTS (arrays) of COLLECTIONS (objects) of Data is to have an Array full of objects. 
   Create an empty array called users.
 */
-
-//Code Here
-
+var users = [];
 
 
 /*
@@ -285,8 +371,7 @@ var user1 = {
 };
 // Do not edit the code above.
 
-//Code Here
-
+var users = [];
 
 
 /*
@@ -299,9 +384,30 @@ var user1 = {
   Once you find the particular index he's located in, delete him from the array.
 */
 
-//Code Here
+var user1 = {
+    name: 'Tyler McGinnis',
+    email: 'tylermcginnis33@gmail.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniateLoop'
+};
+var user2 = {
+    name: 'Pablo McGinnis',
+    email: 'tylermcginnis33@gmail.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniateLoop'
+};
+var user3 = {
+    name: 'Steve McGinnis',
+    email: 'tylermcginnis33@gmail.com',
+    password: 'iLoveJavaScript',
+    username: 'infiniateLoop'
+};
+users.push(user1, user2, user3);
+console.log(users);
 
-
+users = users.filter(function(obj){
+  return obj.email !== 'tylermcginnis33@gmail.com';
+})
 
 /*
   The activity we just did is very much how data works in 'the real world'.
